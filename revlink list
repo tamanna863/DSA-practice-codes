@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+struct node{
+    int data;
+    node*link;
+}*temp,*head,*e,*last;
+int main(){
+head = NULL;
+   int m;
+    cout<<"enter the numer of elements in link list";
+    cin>>m;
+    
+    int x;
+    cin>>x;
+   temp = new node; //created temp node and get 1st value;
+    temp->data= x;
+    temp->link = NULL;
+    if(head == NULL){
+        head = last = temp;
+    }
+      while(m-1) {//m-1 bec we have already inserted one element 
+        //inserting new node at beginning making it head;
+        node *e = new node;
+        int f;
+        cin>>f;
+        e->data=f;
+        e->link=head;
+        head = e;
+        m--;
+    }
+    temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp = temp->link;
+    }
+return 0;
+}
