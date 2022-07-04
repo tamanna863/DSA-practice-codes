@@ -1,0 +1,30 @@
+// lecture 22 by love babbar (channel name-code help)
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{  
+    int n,m ;
+   cin>>n>>m;
+   //int *arr = new int [n];   one d array showing 1 row of int; and multiple columns 
+   int ** arr = new int *[n];  // colllection oof rows showing diff pointer;
+   for (int i = 0; i<n;i++){//iterates  over each  row
+       arr[i]= new int[m]; // each pointer shows an array
+   }//creation done;
+   for (int i = 0; i<n;i++){
+       for(int j = 0;j<m;j++){
+       cin>>arr[i][j];}
+   }
+   for (int i = 0; i<n;i++){
+       for(int j = 0;j<m;j++){
+       cout<<arr[i][j]<<" ";}
+       cout<<endl;
+   }
+   
+    //loop for deleting memory from heap;
+    for(int i = 0; i < n; i++){
+        delete[]arr[i];// dlt array located at various indices or rows 
+    } delete[]arr;
+    cout<<"array deleted";
+
+    return 0;
+}
